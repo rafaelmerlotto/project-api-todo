@@ -1,11 +1,10 @@
 import express from 'express'
-import { PrismaClient } from '@prisma/client';
+import { prisma } from './prisma';
 import { Service } from './service';
 
 const server = express();
 server.use(express.json());
 
-const prisma = new PrismaClient();
 
 const service = new Service(prisma)
 
