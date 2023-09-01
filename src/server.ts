@@ -1,14 +1,12 @@
 import express from 'express'
 import { prisma } from './prisma';
 import { Service } from './service';
+import cors from 'cors'
 
 const server = express();
 server.use(express.json());
-
-
 const service = new Service(prisma)
-
-
+server.use(cors())
 
 server.get('/', async (req, res) => {
     const contents = await service.getContent()
