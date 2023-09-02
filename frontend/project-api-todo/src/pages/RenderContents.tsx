@@ -1,4 +1,5 @@
 import { Content } from "../components/content"
+import { CreateContent } from "../components/createContent";
 import { ContentModel } from "../services/models";
 import { service } from "../services/service"
 import { useEffect, useState } from 'react';
@@ -14,22 +15,32 @@ export function RenderContents() {
         getContent();
     }, []);
 
+    async function createContent(text: string, ) {
+        const contents = await service.createContent(text);
+       console.log( setContents(contents));
+       return setContents(contents);
+    }
+
     async function deleteContent(id: string) {
         const getContents = await service.deleteContent(id);
         setContents(getContents)
     };
    
     return (
-        <div>
-            {contents.map((content) => (
+        <>
+        <div className='listItem'>
+                 {Object.values(contents).map((content) => (
                 <Content 
                 id={content.id} 
                 text={content.text}
                  key={content.id}
                  deleteContent={() => deleteContent(content.id)}
                  />
-            ))}           
+            ))} 
         </div>
+        
+            <CreateContent create={createContent}/>         
+        </>
     )
 
 }

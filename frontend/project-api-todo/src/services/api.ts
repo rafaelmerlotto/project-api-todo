@@ -12,7 +12,7 @@ export class Service {
         return await res.json();
     }
 
-    async createContent(text: string) {
+    async createContent(text: string): Promise<ContentModel[]>  {
         const res = await fetch(`${this.url}`, {
             method: 'POST',
             body: JSON.stringify({ text: text }),

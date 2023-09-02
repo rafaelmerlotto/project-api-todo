@@ -19,7 +19,11 @@ server.get('/', async (req, res) => {
 server.post('/', async (req, res) => {
     const { text } = req.body;
     const content = await service.createContent(text);
-    res.status(200).send(content);
+    if(!content){
+        return res.status(401).send({ msg: 'Cannot create Content' });
+    }
+     const contents = await service.getContent()
+    res.status(200).send(contents);
 })
 
 server.delete('/:contentId', async (req, res) => {

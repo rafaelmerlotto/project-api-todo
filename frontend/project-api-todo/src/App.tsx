@@ -1,15 +1,14 @@
-
-import{IndexContents} from '../src/pages/Index'
 import { RenderContents } from './pages/RenderContents';
-
 
 
 function App() {
   return (
     <div className="App">
-      <RenderContents/>
-     <IndexContents/>
+      <nav>
+         <h1>Todo List</h1>
+      </nav>
      
+      <RenderContents/>
     </div>
   );
 }

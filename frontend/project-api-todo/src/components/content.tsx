@@ -10,13 +10,10 @@ interface ContentProps {
 
 export const Content: FC<ContentProps> = ({ id, text, deleteContent }) => {
     return (
-        <div>
-            <ListItemText
-                key={id}
-            >
-                {text}
-                <button key={id} onClick={deleteContent}><DeleteIcon /></button>               
-            </ListItemText>
-        </div>
+        <>
+            <p className='itemList' key={id} ><p className='textContent'>{text}</p>
+                <button key={id} onClick={deleteContent}><DeleteIcon className='deleteIcon' /></button>               
+            </p>
+        </>
     )
 }
