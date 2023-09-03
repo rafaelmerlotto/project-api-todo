@@ -1,5 +1,5 @@
-import { Content } from "../components/content"
-import { CreateContent } from "../components/createContent";
+import { Content } from "../components/Content"
+import { CreateContent } from "../components/CreateContent";
 import { ContentModel } from "../services/models";
 import { service } from "../services/service"
 import { useEffect, useState } from 'react';
@@ -38,7 +38,6 @@ export function RenderContents() {
                  />
             ))} 
         </div>
-        
             <CreateContent create={createContent}/>         
         </>
     )
