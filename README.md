@@ -9,8 +9,11 @@ The frontend was developed in React, with the Typescript.
 ## Getting started
 
 Run the development server:
+
 `npm run dev`
 
 Run the app in the development mode.
+
 `npm run start`
+
 Open [http://localhost:3000] to view it in your browser.
