@@ -12,6 +12,7 @@ export class Service {
         return await this.prisma.content.create({
             data: {
                 text: text,
+                completed: false
             }
         })
     }
