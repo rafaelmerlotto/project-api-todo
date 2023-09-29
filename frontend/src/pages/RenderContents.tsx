@@ -1,3 +1,4 @@
+
 import { Content } from "../components/Content"
 import { CreateContent } from "../components/CreateContent";
 import { ContentModel } from "../services/models";
@@ -7,6 +8,8 @@ import { useEffect, useState } from 'react';
 
 export function RenderContents() {
     const [contents, setContents] = useState<ContentModel[]>([]);
+    
+
     useEffect(() => {
         async function getContent() {
             const getContents = await service.getContents();
@@ -21,6 +24,8 @@ export function RenderContents() {
        return setContents(contents);
     }
 
+   
+  
     async function deleteContent(id: string) {
         const getContents = await service.deleteContent(id);
         setContents(getContents)
@@ -31,13 +36,14 @@ export function RenderContents() {
         <div className='listItem'>
                  {Object.values(contents).map((content) => (
                 <Content 
-                id={content.id} 
-                text={content.text}
-                 key={content.id}
-                 deleteContent={() => deleteContent(content.id)}
+                         id={content.id}
+                         text={content.text}
+                         key={content.id}
+                         deleteContent={() => deleteContent(content.id)}
+                                 
                  />
             ))} 
-        </div>
+        </div> 
             <CreateContent create={createContent}/>         
         </>
     )

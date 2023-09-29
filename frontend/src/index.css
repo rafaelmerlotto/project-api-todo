@@ -88,9 +88,10 @@ nav {
 
 .textContent {
   margin-left: 10px;
-  font-size: 18px;
+  font-size: 20px;
   color: rgb(38, 39, 39);
   overflow-wrap: anywhere;
+  font-weight: 600;
 }
 
 form {
@@ -143,6 +144,15 @@ input {
 
 :hover.deleteIcon {
   color: red;
+}
+
+.btn{
+  display: flex;
+  gap: 20px;
+}
+.checkbox{
+width: 25px;
+height: 25px;
 }
 
 
