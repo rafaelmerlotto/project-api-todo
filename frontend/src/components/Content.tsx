@@ -13,16 +13,15 @@ export const Content: FC<ContentProps> = ({ id, text, deleteContent }) => {
     const [completed, setCompleted] = useState<boolean>(false)
 
     const handleChange = () => {
-        setCompleted(true)
+        setCompleted(!completed)
     }
 
     return (
         <>
-
             <p className='itemList' key={id} >
-                {completed === true ? <p className='textContent' style={{ textDecoration: 'line-through' }}>
+                {completed ? <p className='textContent' style={{ textDecoration: 'line-through 2px' }}>
                     {text}
-                </p> : <p className='textContent' style={{ textDecoration: 'none' }}>
+                </p> : <p className='textContent' style={{ textDecoration: 'auto' }}>
                     {text}
                 </p>}
                 <div className='btn'>

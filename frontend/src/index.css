@@ -155,25 +155,44 @@ width: 25px;
 height: 25px;
 }
 
-
+:focus{
+  outline: none;
+}
 
 @media screen and (max-width: 700px) {
+
+ 
   form {
     width: 95%;
     gap: 10px;
     position: fixed;
-    bottom: 15px;
   }
 
   .itemList {
     width: 95%;
+    height:50px;
+    min-height: 60px;
   }
 
   .listItem {
-    height: 490px;
+    height: 690px;
   }
 
   .btnAdd {
     width: 30%;
+  }
+ .textContent{
+  font-size: 15px;
+ }
+ .checkbox{
+  width: 15px;
+  height: 15px;
+  }
+  input{
+    height: 30px;
+    font-size: 14px;
+  } .btnAdd{
+    height: 33px;
+    font-size: 16px;
   }
 }

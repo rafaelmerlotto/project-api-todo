@@ -11,9 +11,7 @@ export const CreateContent: FC<{ create: (text: string) => void }> = ({ create }
 
     return (
         <form onSubmit={onSubmit}>
-         
             <input {...register("text")}   />
-
             <button type="submit" className='btnAdd' >+ Add</button>
         </form>
     );
