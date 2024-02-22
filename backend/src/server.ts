@@ -2,11 +2,13 @@ import express from 'express'
 import { prisma } from './prisma';
 import { Service } from './service';
 import cors from 'cors'
+import path from 'path';
 
 const server = express();
 server.use(express.json());
 const service = new Service(prisma)
 server.use(cors())
+
 
 server.get('/', async (req, res) => {
     const contents = await service.getContent()
@@ -36,6 +38,8 @@ server.delete('/:contentId', async (req, res) => {
     const contents = await service.getContent()
     res.status(200).send(contents);
 })
+
+
 
 const port = 4000;
 server.listen(port, () => {
